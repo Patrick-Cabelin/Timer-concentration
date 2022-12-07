@@ -44,11 +44,18 @@ function Brain( {
     function finishClock() {
         minuteHand.textContent = '00'
         secondHand.textContent = '00'
+     
         clearTimeout(timerOut)
+     
+        Minutes = 0
+        Seconds = 0 
+     
+        clockDisplay(Minutes, Seconds)
     }
     
     function controlTime(){
-        let moreORless= event.path[1].classList.value == "less"
+        let moreORless= event.path[1].classList.value == "less light" || event.path[1].classList.value == 'less'
+
         clearTimeout(timerOut)
         
         if(moreORless){
@@ -67,6 +74,7 @@ function Brain( {
             coffeeShop:setButtons.coffeeshop,
             bonfire: setButtons.bonfire,
         }
+        
         function changes(cardOne, cardTwo, cardThree){
             cardOne.classList.remove('select')
             cardTwo.classList.remove('select')
