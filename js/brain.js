@@ -77,20 +77,67 @@ function Brain( {
             changes(cardSound.rain, cardSound.coffeeShop, cardSound.bonfire)
             cardSound.florest.classList.add('select')
         }
+
         function selectRain(){
             changes(cardSound.florest, cardSound.coffeeShop, cardSound.bonfire)
             cardSound.rain.classList.add('select')
         }
+
          function selectCoffeeShop(){
             changes(cardSound.rain, cardSound.florest, cardSound.bonfire)
             cardSound.coffeeShop.classList.add('select')
         }
+
         function selectBonfire(){
             changes(cardSound.rain, cardSound.coffeeShop, cardSound.florest)
             cardSound.bonfire.classList.add('select')
         }
 
-     
+        function themeMode(){
+            const body= document.querySelector('body')
+            const time = document.querySelector('.timer')
+
+            const themeLight = setButtons.moon.classList.value == 'moon mode'
+            const themeDark = setButtons.sun.classList.value == 'sun mode'
+
+            if(themeLight ){
+                setButtons.Play.classList.add('light')
+                setButtons.Stop.classList.add('light')
+                setButtons.More.classList.add('light')
+                setButtons.Less.classList.add('light')
+                setButtons.florest.classList.add('light')
+                setButtons.rain.classList.add('light')
+                setButtons.coffeeshop.classList.add('light')
+                setButtons.bonfire.classList.add('light')
+
+                setButtons.moon.classList.toggle('mode')
+                setButtons.sun.classList.toggle('mode')
+
+            }
+
+            if(themeDark){
+
+                setButtons.Play.classList.remove('light')
+                setButtons.Stop.classList.remove('light')
+                setButtons.More.classList.remove('light')
+                setButtons.Less.classList.remove('light')
+                setButtons.florest.classList.remove('light')
+                setButtons.rain.classList.remove('light')
+                setButtons.coffeeshop.classList.remove('light')
+                setButtons.bonfire.classList.remove('light')
+
+                setButtons.moon.classList.toggle('mode')
+                setButtons.sun.classList.toggle('mode')
+            }
+
+
+            body.classList.toggle('light')
+            time.classList.toggle('light')
+
+        }
+
+       
+
     return {
         starterClock,
         finishClock,
@@ -99,6 +146,8 @@ function Brain( {
         selectFlorest,
         selectRain,
         selectCoffeeShop,
-        selectBonfire
+        selectBonfire,
+        themeMode,
+        
     }
 }

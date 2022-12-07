@@ -4,12 +4,20 @@ export function Buttons(){
     const stopClock = document.querySelector('.stop')
     const moreTime = document.querySelector('.more')
     const lessTime = document.querySelector('.less')
+  
     // Botões Ambiente
 
     const florest = document.querySelector('.florest')
     const rain = document.querySelector('.rain')
     const coffeeshop = document.querySelector('.coffeeShop')
     const bonfire = document.querySelector('.bonfire')
+
+    //Mode
+    const Mode = {
+        sun: document.querySelector('.sun'),
+        moon: document.querySelector('.moon')
+    }
+  
 
     return {
         playClock,
@@ -19,6 +27,7 @@ export function Buttons(){
         florest,
         rain,
         coffeeshop,
-        bonfire
+        bonfire,
+        Mode
     }
 }

@@ -8,12 +8,15 @@
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
 
-    --sound-select-light: #02799D;
     --sound-select-default: #1414eb;
+    --bg-default: #121214;
     --select-icon: #ffffff;
-
+    
+    --sound-light: #11495a;
+    --sound-select-light: #02799D;
+    --select-icon-light: #2d4e58;
+    --timer-color-light:#2f6779;
     --bg-light:#d1d1d4;
-    --bg-default: #000000;
 }
 
 body{
@@ -42,6 +45,10 @@ span{
     text-align: center;
 
     color: var(--sound-select-default);
+}
+
+input[type='range']{
+    cursor: pointer;
 }
 
 .crono{
@@ -74,16 +81,7 @@ span{
 
 .play svg path, .stop svg path, .more svg path, .less svg path{
     fill: var(--sound-select-default);
-}
-
-/* .florest svg path, .rain svg path, .coffeeShop svg path, .bonfire svg path{} */
-
-.light svg path + path{
-    fill: var(--select-icon);
-} 
-
-.light svg path{
-    fill:var(--sound-select-light);
+    
 }
 
 .select svg path + path{
@@ -92,4 +90,69 @@ span{
 
 .select svg path {
     fill: var(--sound-select-default);
+}
+
+/* lightMode */
+
+.timer.light  span{
+    color:var(--timer-color-light);
+}
+
+.light svg path + path{
+    fill: var(--select-icon);
+} 
+
+.light svg path{
+    fill:var(--sound-select-light);
+}
+.appearance{
+    cursor:pointer;
+    height: 5.5rem;
+    position: absolute;
+    right: 7.5rem;
+    top: 7.5rem;
+}
+
+.mode{
+    display: none;  
+}
+
+.light{
+   background:var(--bg-light); 
+}
+
+.play.light svg path,
+.stop.light svg path,
+.more.light svg path,
+.less.light svg path{
+    fill: var(--timer-color-light);
+}
+
+
+.florest.light svg path,
+.rain.light svg path,
+.coffeeShop.light svg path,
+.bonfire.light svg path{
+    fill:var(--sound-light);
+}
+
+.florest.light path ~ path,
+.rain.light path ~ path,
+.coffeeShop.light path ~ path,
+.bonfire.light path ~ path{
+    fill:var(--bg-light);
+}
+
+.florest.light.select svg path,
+.rain.light.select svg path,
+.coffeeShop.light.select svg path,
+.bonfire.light.select svg path{
+    fill:var(--sound-select-light);
+}
+
+.florest.light.select path ~ path,
+.rain.light.select path ~ path,
+.coffeeShop.light.select path ~ path,
+.bonfire.light.select path ~ path{
+    fill:var(--select-icon-light);
 }

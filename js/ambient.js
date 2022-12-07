@@ -46,10 +46,39 @@ export function ambientSound() {
       song.bonfire.loop = true
    }
 
+   function Volume(){
+      const vm = document.querySelectorAll('input[type ="range"]')
+     
+      switch (event.target) {
+         case vmFlorest:
+            song.florest.volume = vmFlorest.value/100
+         break;
+
+         case vmRain:
+            song.rain.volume = vmRain.value/100
+         break;
+      
+         case vmCoffeeShop:
+            song.coffeeShop.volume = vmCoffeeShop.value/100
+         break;
+
+         case vmBonfire:
+            song.bonfire.volume = vmBonfire.value/100
+         break;
+         
+         default:
+            return
+         break;
+      }
+      
+  
+   }
+
    return {
       florestSong,
       coffeeShopSong,
       rainSong,
-      bonfireSong
+      bonfireSong,
+      Volume
    }
 }
